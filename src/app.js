@@ -8,6 +8,7 @@ const cors = require("cors");
 
 const { connectDatabase } = require("./config/database");
 const authRoutes = require("./routes/authRoutes");
+const productRoutes = require("./routes/productRoutes");
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 connectDatabase();
 
 app.use("/api/auth", authRoutes);
+app.use("/api", productRoutes);
 
 app.get("/api/health", (req, res) => {
   res.json({
