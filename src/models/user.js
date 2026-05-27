@@ -7,6 +7,12 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
+    username: {
+      type: String,
+      required: [true, "Username is required"],
+      unique: true,
+      trim: true,
+    },
     email: {
       type: String,
       required: [true, "Email is required"],
@@ -28,6 +34,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    role: {
+      type: String,
+      default: "user",
+      trim: true,
+    },
     resetOtp: {
       type: String,
       default: null,
@@ -44,6 +55,7 @@ const userSchema = new mongoose.Schema(
   },
 );
 
+userSchema.index({ username: 1 });
 userSchema.index({ email: 1 });
 
 userSchema.virtual("isOtpValid").get(function () {

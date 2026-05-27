@@ -33,3 +33,12 @@ export const resetPasswordApi = async (
     throw error.response?.data || error.message;
   }
 };
+
+export const loginApi = async (username, password) => {
+  try {
+    const response = await api.post("/login", { username, password });
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || error.message;
+  }
+};

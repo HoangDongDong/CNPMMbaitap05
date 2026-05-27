@@ -4,6 +4,7 @@
  */
 
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const { sendOtpEmail } = require("../config/email");
 
@@ -36,6 +37,47 @@ const forgotPassword = async (email) => {
     throw new Error(
       error.message || "Failed to process forgot password request",
     );
+  }
+};
+
+const login = async (username, password) => {
+  try {
+    const user = await User.findOne({ username }).select("+password");
+    if (!user) {
+      throw new Error("Invalid username or password");
+    }
+
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
+      throw new Error("Invalid username or password");
+    }
+
+    const token = jwt.sign(
+      {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        role: user.role || "user",
+      },
+      process.env.JWT_SECRET || "default_secret",
+      { expiresIn: "1h" },
+    );
+
+    return {
+      success: true,
+      message: "Login successful",
+      token,
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        fullName: user.fullName || "",
+        role: user.role || "user",
+      },
+    };
+  } catch (error) {
+    console.error("Error in login:", error.message);
+    throw new Error(error.message || "Login failed");
   }
 };
 
@@ -98,6 +140,7 @@ const verifyEmailExists = async (email) => {
 };
 
 module.exports = {
+  login,
   forgotPassword,
   resetPassword,
   verifyEmailExists,

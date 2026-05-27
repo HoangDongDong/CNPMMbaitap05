@@ -81,13 +81,15 @@ const TopProductsSection = () => {
   const canNext = totalPages ? page < totalPages : items.length === 10;
 
   return (
-    <div className="mt-12 rounded-3xl border border-[#2a2326] bg-[#141217] p-6 shadow-sm">
+    <div className="mt-12 rounded-3xl border border-outline-variant/30 bg-surface-container-lowest p-6 shadow-soft">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-[#cbd5e1]/60">
+          <p className="text-xs uppercase tracking-[0.3em] text-on-surface-variant/70">
             Top cong thuc
           </p>
-          <h3 className="mt-2 font-display text-2xl">{headerText}</h3>
+          <h3 className="mt-2 font-display text-2xl text-on-surface">
+            {headerText}
+          </h3>
         </div>
         <div className="flex flex-wrap items-center gap-2">
           {typeOptions.map((option) => (
@@ -100,8 +102,8 @@ const TopProductsSection = () => {
               }}
               className={`rounded-full border px-4 py-2 text-xs font-semibold transition ${
                 type === option.key
-                  ? "border-[#f59e0b] bg-[#1b1410] text-[#f59e0b]"
-                  : "border-[#3a2e32] text-[#e5e7eb] hover:border-[#f59e0b]/60"
+                  ? "border-primary bg-primary-container text-on-primary-container"
+                  : "border-outline-variant text-secondary hover:border-primary/60"
               }`}
             >
               {option.label}
@@ -110,7 +112,7 @@ const TopProductsSection = () => {
         </div>
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-[#cbd5e1]/70">
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-on-surface-variant">
         <span>
           Trang {pagination?.page || page}
           {totalPages ? ` / ${totalPages}` : ""}
@@ -120,7 +122,7 @@ const TopProductsSection = () => {
             type="button"
             onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
             disabled={!canPrev}
-            className="rounded-full border border-[#3a2e32] px-3 py-1 text-xs font-semibold text-[#e5e7eb] transition disabled:cursor-not-allowed disabled:opacity-50"
+            className="rounded-full border border-outline-variant px-3 py-1 text-xs font-semibold text-secondary transition disabled:cursor-not-allowed disabled:opacity-50"
           >
             Truoc
           </button>
@@ -128,7 +130,7 @@ const TopProductsSection = () => {
             type="button"
             onClick={() => setPage((prev) => prev + 1)}
             disabled={!canNext}
-            className="rounded-full border border-[#3a2e32] px-3 py-1 text-xs font-semibold text-[#e5e7eb] transition disabled:cursor-not-allowed disabled:opacity-50"
+            className="rounded-full border border-outline-variant px-3 py-1 text-xs font-semibold text-secondary transition disabled:cursor-not-allowed disabled:opacity-50"
           >
             Tiep
           </button>
@@ -137,19 +139,19 @@ const TopProductsSection = () => {
 
       <div className="mt-6">
         {loading ? (
-          <div className="rounded-2xl border border-dashed border-[#3a2e32] bg-[#1b181f] px-6 py-8 text-center text-sm text-[#cbd5e1]/70">
+          <div className="rounded-2xl border border-dashed border-outline-variant/50 bg-surface-container-low px-6 py-8 text-center text-sm text-on-surface-variant">
             Dang tai danh sach cong thuc...
           </div>
         ) : error ? (
-          <div className="rounded-2xl border border-[#40211a] bg-[#24110f] px-6 py-8 text-center text-sm text-[#fca5a5]">
+          <div className="rounded-2xl border border-error/30 bg-error-container px-6 py-8 text-center text-sm text-on-error-container">
             {error}
           </div>
         ) : items.length === 0 ? (
-          <div className="rounded-2xl border border-dashed border-[#3a2e32] bg-[#1b181f] px-6 py-8 text-center text-sm text-[#cbd5e1]/70">
+          <div className="rounded-2xl border border-dashed border-outline-variant/50 bg-surface-container-low px-6 py-8 text-center text-sm text-on-surface-variant">
             Chua co cong thuc phu hop.
           </div>
         ) : (
-          <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4">
+          <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 hide-scrollbar">
             {items.map((item) => {
               const image = item?.images?.[0];
               const metric =
@@ -160,10 +162,10 @@ const TopProductsSection = () => {
               return (
                 <article
                   key={item._id}
-                  className="min-w-[240px] snap-start rounded-3xl border border-[#2a2326] bg-[#1b181f] p-4 shadow-sm"
+                  className="min-w-[240px] snap-start rounded-3xl border border-outline-variant/30 bg-surface-container-lowest p-4 shadow-soft"
                 >
                   <div
-                    className="h-36 w-full rounded-2xl bg-gradient-to-br from-[#1f1b1c] to-[#2a2326] bg-cover bg-center"
+                    className="h-36 w-full rounded-2xl bg-gradient-to-br from-surface-container-low to-surface-container bg-cover bg-center"
                     style={
                       image
                         ? {
@@ -172,20 +174,20 @@ const TopProductsSection = () => {
                         : undefined
                     }
                   />
-                  <div className="mt-4 flex items-center justify-between text-xs text-[#cbd5e1]/60">
+                  <div className="mt-4 flex items-center justify-between text-xs text-on-surface-variant">
                     <span>{item.category}</span>
                     <span>{metric}</span>
                   </div>
-                  <h4 className="mt-3 font-display text-lg text-[#f3f4f6]">
+                  <h4 className="mt-3 font-display text-lg text-on-surface">
                     {item.name}
                   </h4>
-                  <p className="mt-2 line-clamp-2 text-xs text-[#cbd5e1]/70">
+                  <p className="mt-2 line-clamp-2 text-xs text-on-surface-variant">
                     {item.description}
                   </p>
-                  <div className="mt-4 flex items-center justify-between text-xs text-[#cbd5e1]/70">
+                  <div className="mt-4 flex items-center justify-between text-xs text-on-surface-variant">
                     <span>{formatCurrency(Number(item.price))}</span>
                     {item.isBestSeller ? (
-                      <span className="rounded-full bg-[#1b1410] px-2 py-1 text-[10px] font-semibold text-[#f59e0b]">
+                      <span className="rounded-full bg-primary-container px-2 py-1 text-[10px] font-semibold text-on-primary-container">
                         Best seller
                       </span>
                     ) : null}

@@ -9,13 +9,17 @@ const router = express.Router();
 const authController = require("../controllers/authController");
 
 const {
+  loginLimiter,
   forgotPasswordLimiter,
   resetPasswordLimiter,
 } = require("../middlewares/rateLimiter");
 const {
+  validateLogin,
   validateForgotPassword,
   validateResetPassword,
 } = require("../middlewares/validators");
+
+router.post("/login", loginLimiter, validateLogin, authController.login);
 
 router.post(
   "/forgot-password",

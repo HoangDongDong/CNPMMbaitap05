@@ -16,6 +16,7 @@ const server = app.listen(PORT, () => {
   console.log("=".repeat(60) + "\n");
 
   console.log("Available Routes:");
+  console.log("  POST http://localhost:" + PORT + "/api/auth/login");
   console.log("  POST http://localhost:" + PORT + "/api/auth/forgot-password");
   console.log("  POST http://localhost:" + PORT + "/api/auth/reset-password");
   console.log("  GET  http://localhost:" + PORT + "/api/products/top");

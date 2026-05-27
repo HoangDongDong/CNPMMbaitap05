@@ -1,6 +1,6 @@
 const styles = {
-  success: "border-sea/30 bg-sea/10 text-sea",
-  error: "border-red-200 bg-red-50 text-red-600",
+  success: "border-sea-600/30 bg-sea-600/10 text-sea-700",
+  error: "border-error/30 bg-error-container text-on-error-container",
 };
 
 const StatusMessage = ({ type, message }) => {

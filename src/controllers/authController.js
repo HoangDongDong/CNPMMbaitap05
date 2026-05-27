@@ -5,6 +5,27 @@
 
 const authService = require("../services/authService");
 
+const login = async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const result = await authService.login(username, password);
+
+    return res.status(200).json({
+      success: true,
+      message: "Dang nhap thanh cong",
+      data: {
+        token: result.token,
+        user: result.user,
+      },
+    });
+  } catch (error) {
+    return res.status(401).json({
+      success: false,
+      message: error.message || "Login failed",
+    });
+  }
+};
+
 const forgotPassword = async (req, res) => {
   try {
     const { email } = req.body;
@@ -78,6 +99,7 @@ const resetPassword = async (req, res) => {
 };
 
 module.exports = {
+  login,
   forgotPassword,
   resetPassword,
 };

@@ -1,326 +1,215 @@
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import TopProductsSection from "../components/TopProductsSection";
 
 const categories = [
   {
-    title: "Món chính",
-    description: "Món ăn đầy đủ chất cho bữa tối",
+    title: "Mon chinh",
+    description: "Mon an day du chat cho bua toi",
   },
   {
-    title: "Món phụ",
-    description: "Món kèm nhẹ để cân bằng bữa ăn",
+    title: "Mon phu",
+    description: "Mon kem nhe de can bang bua an",
   },
   {
-    title: "Tráng miệng",
-    description: "Kết thúc bữa ăn ngọt ngào",
+    title: "Trang mieng",
+    description: "Ket thuc bua an ngot ngao",
   },
   {
-    title: "Đồ uống",
-    description: "Công thức nước uống tự nhiên",
+    title: "Do uong",
+    description: "Cong thuc nuoc uong tu nhien",
   },
   {
-    title: "Ăn vặt",
-    description: "Nhanh gọn, hấp dẫn",
+    title: "An vat",
+    description: "Nhanh gon, hap dan",
   },
 ];
 
 const featuredRecipes = [
   {
-    title: "Gà nướng thảo mộc",
-    tag: "Món chính",
-    time: "45 phút",
-    difficulty: "Trung bình",
+    title: "Ga nuong thao moc",
+    tag: "Mon chinh",
+    time: "45 phut",
+    difficulty: "Trung binh",
     rating: "4.8",
   },
   {
-    title: "Bún bò tại nhà",
-    tag: "Món chính",
-    time: "60 phút",
-    difficulty: "Khó",
+    title: "Bun bo tai nha",
+    tag: "Mon chinh",
+    time: "60 phut",
+    difficulty: "Kho",
     rating: "4.9",
   },
   {
-    title: "Salad cá hồi",
-    tag: "Món phụ",
-    time: "20 phút",
-    difficulty: "Dễ",
+    title: "Salad ca hoi",
+    tag: "Mon phu",
+    time: "20 phut",
+    difficulty: "De",
     rating: "4.7",
   },
 ];
 
 const latestRecipes = [
   {
-    title: "Cháo yến mạch",
-    description: "Công thức biểu tượng cho bữa sáng nhanh gọn.",
-    time: "15 phút",
+    title: "Chao yen mach",
+    description: "Cong thuc bieu tuong cho bua sang nhanh gon.",
+    time: "15 phut",
     calories: "320 kcal",
   },
   {
-    title: "Súp bí đỏ",
-    description: "Ấm bụng, giàu chất xơ và vitamin A.",
-    time: "30 phút",
+    title: "Sup bi do",
+    description: "Am bung, giau chat xo va vitamin A.",
+    time: "30 phut",
     calories: "280 kcal",
   },
   {
-    title: "Sinh tố xanh",
-    description: "Xay lá cải, táo và chuối cho năng lượng sạch.",
-    time: "10 phút",
+    title: "Sinh to xanh",
+    description: "Xay la cai, tao va chuoi cho nang luong sach.",
+    time: "10 phut",
     calories: "190 kcal",
   },
 ];
 
 const learningSteps = [
   {
-    title: "Tuần 1",
-    subtitle: "Bếp lành mạnh cơ bản",
+    title: "Tuan 1",
+    subtitle: "Bep lanh manh co ban",
     points: [
-      "Nắm bộ nguyên tắc dinh dưỡng cơ bản",
-      "Sắp xếp bữa ăn theo lịch cá nhân",
-      "Tạo danh sách mua sắm tối ưu",
-      "Cân bằng nhóm chất theo khẩu phần",
+      "Nam bo nguyen tac dinh duong co ban",
+      "Sap xep bua an theo lich ca nhan",
+      "Tao danh sach mua sam toi uu",
+      "Can bang nhom chat theo khau phan",
     ],
   },
   {
-    title: "Tuần 2",
-    subtitle: "Thực đơn theo mục tiêu",
+    title: "Tuan 2",
+    subtitle: "Thuc don theo muc tieu",
     points: [
-      "Thiết lập ngân sách ăn uống thực tế",
-      "Gợi ý món ăn theo mục tiêu sức khỏe",
-      "Định lượng calo và macro dễ hiểu",
-      "Lưu công thức và đánh giá cộng đồng",
+      "Thiet lap ngan sach an uong thuc te",
+      "Goi y mon an theo muc tieu suc khoe",
+      "Dinh luong calo va macro de hieu",
+      "Luu cong thuc va danh gia cong dong",
     ],
   },
   {
-    title: "Tuần 3",
-    subtitle: "Tăng tốc với AI",
+    title: "Tuan 3",
+    subtitle: "Tang toc voi AI",
     points: [
-      "Tạo thực đơn 7 ngày chỉ trong 1 phút",
-      "Chatbot dinh dưỡng trả lời tức thì",
-      "Tự động gợi ý link nguyên liệu",
-      "Theo dõi tiến độ ăn uống thông minh",
+      "Tao thuc don 7 ngay chi trong 1 phut",
+      "Chatbot dinh duong tra loi tuc thi",
+      "Tu dong goi y link nguyen lieu",
+      "Theo doi tien do an uong thong minh",
     ],
   },
 ];
 
 const checklist = [
-  "Lập thực đơn theo ngân sách mỗi ngày",
-  "Công thức được cộng đồng chấm điểm thực tế",
-  "Gợi ý món ăn theo mục tiêu dinh dưỡng",
-  "Tối ưu thời gian nấu cho người bận rộn",
-  "Lưu và chia sẻ công thức yêu thích",
-  "Kết nối chuyên gia dinh dưỡng uy tín",
-];
-
-const scheduleItems = [
-  { icon: "📅", label: "Lịch học: Thứ 7 · 30/5 · 6/6 · 13/6" },
-  { icon: "🕕", label: "Khung giờ: 16:00 - 17:30 (Giờ VN)" },
-  { icon: "💳", label: "Học phí: 4.999.000 VNĐ" },
+  "Lap thuc don theo ngan sach moi ngay",
+  "Cong thuc duoc cong dong cham diem thuc te",
+  "Goi y mon an theo muc tieu dinh duong",
+  "Toi uu thoi gian nau cho nguoi ban ron",
+  "Luu va chia se cong thuc yeu thich",
+  "Ket noi chuyen gia dinh duong uy tin",
 ];
 
 const HomePage = () => {
   return (
-    <div className="bg-[#0d0b0c] text-[#f3f4f6]">
-      <header className="relative overflow-hidden border-b border-[#1f1b1c]">
-        <div className="pointer-events-none absolute -left-24 top-[-140px] h-[340px] w-[340px] rounded-full bg-[#f59e0b]/25 blur-[130px]" />
-        <div className="pointer-events-none absolute right-[-90px] top-[140px] h-[300px] w-[300px] rounded-full bg-[#c2410c]/20 blur-[140px]" />
+    <div className="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+      <Header />
 
-        <div className="border-b border-[#1f1b1c] bg-[#141217]/90">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 text-xs text-[#cbd5e1]/70 lg:px-10">
-            <span className="rounded-full bg-[#1b1410] px-3 py-1 font-semibold text-[#f59e0b]">
-              Live online · 3 buổi tư vấn
+      <header className="relative w-full py-xl px-margin-mobile md:px-margin-desktop bg-surface-container-low overflow-hidden">
+        <div className="max-w-max-width mx-auto grid md:grid-cols-2 gap-lg items-center relative z-10">
+          <div className="space-y-md">
+            <span className="inline-block px-4 py-1 bg-tertiary-container/10 text-tertiary rounded-full font-label-md text-label-md">
+              Goi y hom nay
             </span>
-            <span>Hỗ trợ thực đơn miễn phí cho tuần đầu tiên</span>
-          </div>
-        </div>
-
-        <div className="relative mx-auto max-w-6xl px-6 py-10 lg:px-10">
-          <nav className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#f59e0b] text-[#111111]">
-                <span className="font-display text-lg">NM</span>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-[#cbd5e1]/60">
-                  NutriMeal
-                </p>
-                <p className="font-display text-lg">
-                  Nấu thông minh, ăn lành mạnh
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap items-center gap-3 text-sm font-semibold text-[#e5e7eb]">
-              <a className="transition hover:text-[#f59e0b]" href="#recipes">
-                Công thức
-              </a>
-              <a className="transition hover:text-[#f59e0b]" href="#categories">
-                Danh mục
-              </a>
-              <a className="transition hover:text-[#f59e0b]" href="#ai">
-                Thực đơn AI
-              </a>
-              <a
-                className="transition hover:text-[#f59e0b]"
-                href="/forgot-password"
-              >
-                Quên mật khẩu
-              </a>
-              <a
-                className="rounded-full bg-[#f59e0b] px-4 py-2 text-xs text-[#111111] shadow-float transition hover:-translate-y-0.5 hover:bg-[#fbbf24]"
-                href="/reset-password"
-              >
-                Đặt lại mật khẩu
-              </a>
-            </div>
-          </nav>
-
-          <div className="mt-12 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-            <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-[#cbd5e1]/60">
-                Trung tâm bếp thông minh
-              </p>
-              <h1 className="mt-4 font-display text-4xl leading-tight md:text-5xl">
-                Chia sẻ công thức và lập thực đơn thông minh
-              </h1>
-              <p className="mt-4 text-base text-[#cbd5e1]/80">
-                NutriMeal kết nối cộng đồng yêu bếp, gợi ý bữa ăn theo ngân sách
-                và mục tiêu dinh dưỡng.
-              </p>
-
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {checklist.map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-start gap-3 rounded-2xl border border-[#2a2326] bg-[#141217]/90 px-4 py-3 text-sm text-[#d1d5db]/80"
-                  >
-                    <span className="mt-1 text-[#f59e0b]">✓</span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="#recipes"
-                  className="rounded-2xl bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-[#111111] shadow-float transition hover:-translate-y-0.5 hover:bg-[#fbbf24]"
+            <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">
+              Khoi nguon cam hung <br />
+              <span className="text-primary">gian bep Viet</span>
+            </h1>
+            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+              Chia se cong thuc va lap thuc don thong minh cho gia dinh.
+            </p>
+            <div className="mt-base flex flex-wrap gap-3">
+              {checklist.slice(0, 4).map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-outline-variant/40 px-4 py-2 text-xs font-semibold text-secondary"
                 >
-                  Khám phá công thức
-                </a>
-                <a
-                  href="#ai"
-                  className="rounded-2xl border border-[#3a2e32] bg-[#141217]/90 px-6 py-3 text-sm font-semibold text-[#e5e7eb] shadow-sm transition hover:-translate-y-0.5 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
-                >
-                  Thử thực đơn AI
-                </a>
-                <div className="flex items-center gap-2 rounded-2xl border border-[#2a2326] bg-[#141217]/90 px-4 py-3 text-xs font-semibold text-[#cbd5e1]/70">
-                  <span className="text-[#f59e0b]">0đ</span>
-                  <span>miễn phí tuần đầu</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-3xl border border-[#2a2326] bg-[#141217]/95 p-8 shadow-float backdrop-blur">
-              <div className="flex items-center justify-between">
-                <p className="text-xs uppercase tracking-[0.3em] text-[#cbd5e1]/60">
-                  Lịch tư vấn tháng này
-                </p>
-                <span className="rounded-full bg-[#1b1410] px-3 py-1 text-xs font-semibold text-[#f59e0b]">
-                  Suất giới hạn
+                  {item}
                 </span>
-              </div>
-              <h3 className="mt-3 font-display text-2xl">
-                Thực đơn 7 ngày cho người bận rộn
-              </h3>
-              <p className="mt-2 text-sm text-[#cbd5e1]/70">
-                AI gợi ý 3 bữa chính + snack, tối ưu ngân sách và thời gian.
-              </p>
-              <div className="mt-6 space-y-4">
-                {scheduleItems.map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex items-center gap-3 rounded-2xl border border-[#2a2326] bg-[#1b1410]/60 px-4 py-3 text-xs font-semibold text-[#e5e7eb]"
-                  >
-                    <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#111111] text-base">
-                      {item.icon}
-                    </span>
-                    <span>{item.label}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  href="/forgot-password"
-                  className="flex-1 rounded-2xl bg-[#f59e0b] px-5 py-3 text-center text-sm font-semibold text-[#111111] transition hover:-translate-y-0.5 hover:bg-[#fbbf24]"
-                >
-                  Đăng ký ngay
-                </a>
-                <a
-                  href="/reset-password"
-                  className="flex-1 rounded-2xl border border-[#3a2e32] bg-[#141217] px-5 py-3 text-center text-sm font-semibold text-[#e5e7eb] transition hover:-translate-y-0.5 hover:border-[#f59e0b]/50 hover:text-[#f59e0b]"
-                >
-                  Xem lịch học
-                </a>
-              </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="hidden md:block relative">
+            <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-xl">
+              <img
+                alt="Cooking background"
+                className="w-full h-full object-cover"
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+              />
             </div>
           </div>
         </div>
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary-fixed/30 rounded-full blur-3xl -z-0"></div>
       </header>
 
-      <section className="bg-[#0d0b0c]">
-        <div className="mx-auto max-w-6xl px-6 py-16 lg:px-10">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-[#cbd5e1]/60">
-                Nội dung chính
-              </p>
-              <h2 className="mt-3 font-display text-3xl">
-                Chương trình 3 tuần thực hành
-              </h2>
-              <p className="mt-3 text-sm text-[#cbd5e1]/70">
-                Từ nền tảng dinh dưỡng đến lập thực đơn tự động bằng AI.
-              </p>
-            </div>
+      <section className="py-xl px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto w-full">
+        <div className="flex justify-between items-end mb-lg">
+          <div>
+            <p className="font-label-md text-label-md text-on-surface-variant">
+              Noi dung chinh
+            </p>
+            <h2 className="mt-3 font-headline-md text-headline-md text-on-surface font-bold">
+              Chuong trinh 3 tuan thuc hanh
+            </h2>
+            <p className="mt-2 text-sm text-on-surface-variant">
+              Tu nen tang dinh duong den lap thuc don tu dong bang AI.
+            </p>
           </div>
+        </div>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {learningSteps.map((step) => (
-              <div
-                key={step.title}
-                className="rounded-3xl border border-[#2a2326] bg-[#141217] p-6 shadow-sm"
-              >
-                <p className="text-xs uppercase tracking-[0.25em] text-[#cbd5e1]/60">
-                  {step.title}
-                </p>
-                <h3 className="mt-3 font-display text-xl text-ink-900">
-                  {step.subtitle}
-                </h3>
-                <ul className="mt-4 space-y-2 text-sm text-[#cbd5e1]/70">
-                  {step.points.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="text-[#f59e0b]">→</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {learningSteps.map((step) => (
+            <div
+              key={step.title}
+              className="rounded-3xl border border-outline-variant/20 bg-surface-container-lowest p-6 shadow-soft"
+            >
+              <p className="text-xs uppercase tracking-[0.25em] text-on-surface-variant/70">
+                {step.title}
+              </p>
+              <h3 className="mt-3 font-display text-xl text-on-surface">
+                {step.subtitle}
+              </h3>
+              <ul className="mt-4 space-y-2 text-sm text-on-surface-variant">
+                {step.points.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-primary">→</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
 
       <section
         id="categories"
-        className="mx-auto max-w-6xl px-6 py-16 lg:px-10"
+        className="py-xl px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto w-full"
       >
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#cbd5e1]/60">
-              Danh mục
+            <p className="text-xs uppercase tracking-[0.3em] text-on-surface-variant/70">
+              Danh muc
             </p>
-            <h2 className="mt-3 font-display text-3xl">
-              Khám phá theo danh mục
+            <h2 className="mt-3 font-headline-md text-headline-md text-on-surface font-bold">
+              Kham pha theo danh muc
             </h2>
           </div>
-          <a className="text-sm font-semibold text-[#f59e0b]" href="#recipes">
-            Xem tất cả danh mục
+          <a className="text-sm font-semibold text-primary" href="#recipes">
+            Xem tat ca danh muc
           </a>
         </div>
 
@@ -328,36 +217,41 @@ const HomePage = () => {
           {categories.map((category) => (
             <div
               key={category.title}
-              className="rounded-3xl border border-[#2a2326] bg-[#141217] p-6 shadow-sm"
+              className="rounded-3xl border border-outline-variant/20 bg-surface-container-lowest p-6 shadow-soft"
             >
-              <p className="text-xs uppercase tracking-[0.25em] text-[#cbd5e1]/60">
+              <p className="text-xs uppercase tracking-[0.25em] text-on-surface-variant/70">
                 {category.title}
               </p>
-              <p className="mt-3 text-sm text-[#cbd5e1]/70">
+              <p className="mt-3 text-sm text-on-surface-variant">
                 {category.description}
               </p>
-              <button className="mt-6 rounded-full border border-[#3a2e32] px-4 py-2 text-xs font-semibold text-[#e5e7eb]">
-                Khám phá
+              <button className="mt-6 rounded-full border border-outline-variant px-4 py-2 text-xs font-semibold text-secondary">
+                Kham pha
               </button>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="recipes" className="bg-[#0d0b0c]">
-        <div className="mx-auto max-w-6xl px-6 py-16 lg:px-10">
+      <section
+        id="recipes"
+        className="py-xl bg-surface-container-low overflow-hidden w-full"
+      >
+        <div className="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-[#cbd5e1]/60">
-                Nổi bật
+              <p className="text-xs uppercase tracking-[0.3em] text-on-surface-variant/70">
+                Noi bat
               </p>
-              <h2 className="mt-3 font-display text-3xl">Công thức nổi bật</h2>
+              <h2 className="mt-3 font-headline-md text-headline-md text-on-surface font-bold">
+                Cong thuc noi bat
+              </h2>
             </div>
             <a
-              className="text-sm font-semibold text-[#f59e0b]"
+              className="text-sm font-semibold text-primary"
               href="#categories"
             >
-              Xem tất cả công thức
+              Xem tat ca cong thuc
             </a>
           </div>
 
@@ -365,25 +259,25 @@ const HomePage = () => {
             {featuredRecipes.map((recipe) => (
               <div
                 key={recipe.title}
-                className="group rounded-3xl border border-[#2a2326] bg-[#141217] p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-float"
+                className="group rounded-3xl border border-outline-variant/20 bg-surface-container-lowest p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-recipe-hover"
               >
-                <div className="flex items-center justify-between text-xs text-[#cbd5e1]/60">
+                <div className="flex items-center justify-between text-xs text-on-surface-variant">
                   <span>{recipe.tag}</span>
                   <span>{recipe.rating} ★</span>
                 </div>
-                <h3 className="mt-4 font-display text-xl text-ink-900">
+                <h3 className="mt-4 font-display text-xl text-on-surface">
                   {recipe.title}
                 </h3>
                 <div className="mt-4 flex flex-wrap gap-2 text-xs">
-                  <span className="rounded-full bg-[#1b181f] px-3 py-1">
+                  <span className="rounded-full bg-surface-container-low px-3 py-1 text-on-surface-variant">
                     {recipe.time}
                   </span>
-                  <span className="rounded-full bg-[#1b181f] px-3 py-1">
+                  <span className="rounded-full bg-surface-container-low px-3 py-1 text-on-surface-variant">
                     {recipe.difficulty}
                   </span>
                 </div>
-                <button className="mt-6 rounded-2xl bg-[#f59e0b] px-4 py-2 text-xs font-semibold text-[#111111] transition hover:-translate-y-0.5 hover:bg-[#fbbf24]">
-                  Xem công thức
+                <button className="mt-6 rounded-2xl bg-primary px-4 py-2 text-xs font-semibold text-on-primary transition hover:-translate-y-0.5 hover:bg-primary/90">
+                  Xem cong thuc
                 </button>
               </div>
             ))}
@@ -392,25 +286,25 @@ const HomePage = () => {
           <TopProductsSection />
 
           <div className="mt-14 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="rounded-3xl border border-[#2a2326] bg-[#141217] p-8 shadow-sm">
-              <p className="text-xs uppercase tracking-[0.3em] text-[#cbd5e1]/60">
-                Công thức mới nhất
+            <div className="rounded-3xl border border-outline-variant/20 bg-surface-container-lowest p-8 shadow-soft">
+              <p className="text-xs uppercase tracking-[0.3em] text-on-surface-variant/70">
+                Cong thuc moi nhat
               </p>
               <div className="mt-6 space-y-4">
                 {latestRecipes.map((recipe) => (
                   <div
                     key={recipe.title}
-                    className="flex flex-col gap-2 rounded-2xl border border-[#2a2326] bg-[#1b181f] p-4 sm:flex-row sm:items-center sm:justify-between"
+                    className="flex flex-col gap-2 rounded-2xl border border-outline-variant/20 bg-surface-container-low p-4 sm:flex-row sm:items-center sm:justify-between"
                   >
                     <div>
-                      <p className="font-semibold text-ink-900">
+                      <p className="font-semibold text-on-surface">
                         {recipe.title}
                       </p>
-                      <p className="text-xs text-[#cbd5e1]/70">
+                      <p className="text-xs text-on-surface-variant">
                         {recipe.description}
                       </p>
                     </div>
-                    <div className="text-xs text-[#cbd5e1]/60">
+                    <div className="text-xs text-on-surface-variant">
                       <span className="mr-3">{recipe.time}</span>
                       <span>{recipe.calories}</span>
                     </div>
@@ -419,51 +313,54 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-[#2a2326] bg-gradient-to-br from-[#111111] to-[#1b1410] p-8 text-white shadow-float">
-              <p className="text-xs uppercase tracking-[0.3em] text-white/70">
-                Điểm nhấn cộng đồng
+            <div className="rounded-3xl border border-outline-variant/20 bg-surface-container-highest p-8 text-on-surface shadow-soft">
+              <p className="text-xs uppercase tracking-[0.3em] text-on-surface-variant">
+                Diem nhan cong dong
               </p>
               <h3 className="mt-4 font-display text-2xl">
-                500+ đánh giá mới mỗi tháng
+                500+ danh gia moi moi thang
               </h3>
-              <p className="mt-3 text-sm text-white/80">
-                Đánh giá thực tế từ người nấu giúp bạn chọn công thức phù hợp.
+              <p className="mt-3 text-sm text-on-surface-variant">
+                Danh gia thuc te tu nguoi nau giup ban chon cong thuc phu hop.
               </p>
-              <div className="mt-6 space-y-3 text-xs text-white/80">
-                <div className="rounded-2xl border border-white/20 bg-white/10 p-4">
-                  "Món gà nướng rất dễ làm, gia vị vừa miệng." — Minh An
+              <div className="mt-6 space-y-3 text-xs text-on-surface-variant">
+                <div className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-4">
+                  "Mon ga nuong rat de lam, gia vi vua mieng." — Minh An
                 </div>
-                <div className="rounded-2xl border border-white/20 bg-white/10 p-4">
-                  "Meal plan giúp mình tiết kiệm hơn 25%." — Thanh Hà
+                <div className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-4">
+                  "Meal plan giup minh tiet kiem hon 25%." — Thanh Ha
                 </div>
               </div>
-              <button className="mt-6 w-full rounded-2xl bg-white/15 px-4 py-2 text-xs font-semibold text-white">
-                Tham gia cộng đồng
+              <button className="mt-6 w-full rounded-2xl bg-primary-container px-4 py-2 text-xs font-semibold text-on-primary-container">
+                Tham gia cong dong
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="ai" className="mx-auto max-w-6xl px-6 py-16 lg:px-10">
+      <section
+        id="ai"
+        className="py-xl px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto w-full"
+      >
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#cbd5e1]/60">
-              Thực đơn AI
+            <p className="text-xs uppercase tracking-[0.3em] text-on-surface-variant/70">
+              Thuc don AI
             </p>
-            <h2 className="mt-3 font-display text-3xl">
-              Tạo thực đơn thông minh theo ngân sách
+            <h2 className="mt-3 font-headline-md text-headline-md text-on-surface font-bold">
+              Tao thuc don thong minh theo ngan sach
             </h2>
-            <p className="mt-4 text-sm text-[#cbd5e1]/70">
-              Nhập ngân sách, mục tiêu và số người. AI sẽ gợi ý thực đơn 7 ngày
-              kèm lượng calo và chi phí dự kiến.
+            <p className="mt-4 text-sm text-on-surface-variant">
+              Nhap ngan sach, muc tieu va so nguoi. AI se goi y thuc don 7 ngay
+              kem luong calo va chi phi du kien.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              {["Giảm cân", "Tăng cơ", "Ăn lành mạnh", "Tiết kiệm"].map(
+              {["Giam can", "Tang co", "An lanh manh", "Tiet kiem"].map(
                 (goal) => (
                   <span
                     key={goal}
-                    className="rounded-full border border-[#2a2326] bg-[#141217] px-4 py-2 text-xs font-semibold text-[#e5e7eb]"
+                    className="rounded-full border border-outline-variant/20 bg-surface-container-low px-4 py-2 text-xs font-semibold text-secondary"
                   >
                     {goal}
                   </span>
@@ -472,43 +369,34 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-[#2a2326] bg-[#141217] p-8 shadow-float">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#cbd5e1]/60">
-              Thiết lập nhanh
+          <div className="rounded-3xl border border-outline-variant/20 bg-surface-container-lowest p-8 shadow-soft">
+            <p className="text-xs uppercase tracking-[0.3em] text-on-surface-variant/70">
+              Thiet lap nhanh
             </p>
             <div className="mt-6 grid gap-4">
-              <div className="rounded-2xl border border-[#2a2326] bg-[#1b181f] p-4">
-                <p className="text-xs text-[#cbd5e1]/60">Ngân sách / ngày</p>
-                <p className="mt-2 font-semibold">80.000 VNĐ</p>
+              <div className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-4">
+                <p className="text-xs text-on-surface-variant">
+                  Ngan sach / ngay
+                </p>
+                <p className="mt-2 font-semibold">80.000 VND</p>
               </div>
-              <div className="rounded-2xl border border-[#2a2326] bg-[#1b181f] p-4">
-                <p className="text-xs text-[#cbd5e1]/60">Khẩu phần</p>
-                <p className="mt-2 font-semibold">2 người</p>
+              <div className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-4">
+                <p className="text-xs text-on-surface-variant">Khau phan</p>
+                <p className="mt-2 font-semibold">2 nguoi</p>
               </div>
-              <div className="rounded-2xl border border-[#2a2326] bg-[#1b181f] p-4">
-                <p className="text-xs text-[#cbd5e1]/60">Số ngày</p>
-                <p className="mt-2 font-semibold">7 ngày</p>
+              <div className="rounded-2xl border border-outline-variant/20 bg-surface-container-low p-4">
+                <p className="text-xs text-on-surface-variant">So ngay</p>
+                <p className="mt-2 font-semibold">7 ngay</p>
               </div>
             </div>
-            <button className="mt-6 w-full rounded-2xl bg-[#f59e0b] px-5 py-3 text-sm font-semibold text-[#111111] transition hover:-translate-y-0.5 hover:bg-[#fbbf24]">
-              Tạo thực đơn AI
+            <button className="mt-6 w-full rounded-2xl bg-primary px-5 py-3 text-sm font-semibold text-on-primary transition hover:-translate-y-0.5 hover:bg-primary/90">
+              Tao thuc don AI
             </button>
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-[#1f1b1c] bg-[#141217]">
-        <div className="mx-auto flex flex-wrap items-center justify-between gap-4 px-6 py-8 text-xs text-[#cbd5e1]/70 lg:px-10">
-          <p>NutriMeal 2026. Xây dựng cho bếp lành mạnh.</p>
-          <div className="flex flex-wrap items-center gap-4">
-            <a href="/" className="font-semibold text-[#f3f4f6]">
-              Trang chủ
-            </a>
-            <a href="/forgot-password">Quên mật khẩu</a>
-            <a href="/reset-password">Đặt lại mật khẩu</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
