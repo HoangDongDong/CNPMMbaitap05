@@ -1,4 +1,4 @@
-const { getTopProducts } = require("../services/productService");
+const { getTopProducts, listProducts } = require("../services/productService");
 
 const topProducts = async (req, res) => {
   try {
@@ -34,6 +34,33 @@ const topProducts = async (req, res) => {
   }
 };
 
+const listProductsController = async (req, res) => {
+  try {
+    const page = Number(req.query.page);
+    const limit = Number(req.query.limit);
+    const search = req.query.search ? String(req.query.search).trim() : "";
+
+    const result = await listProducts({
+      search,
+      page,
+      limit: Number.isFinite(limit) ? limit : 20,
+    });
+
+    return res.status(200).json({
+      success: true,
+      message: "Lay danh sach mon an thanh cong",
+      data: result.items,
+      pagination: result.pagination,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message || "Loi server",
+    });
+  }
+};
+
 module.exports = {
   topProducts,
+  listProductsController,
 };

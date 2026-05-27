@@ -9,6 +9,7 @@ const cors = require("cors");
 const { connectDatabase } = require("./config/database");
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
+const mealPlanRoutes = require("./routes/mealPlanRoutes");
 
 const app = express();
 
@@ -24,6 +25,7 @@ connectDatabase();
 
 app.use("/api/auth", authRoutes);
 app.use("/api", productRoutes);
+app.use("/api/meal-plans", mealPlanRoutes);
 
 app.get("/api/health", (req, res) => {
   res.json({
